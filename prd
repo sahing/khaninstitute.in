@@ -1,0 +1,240 @@
+# Product Requirements Document (PRD)
+## Khan Institute — Website
+
+**Document Version:** 2.0
+**Date:** September 13, 2026
+**Prepared For:** Khan Institute, Dholahat, South 24 Parganas
+**Prepared By:** Development Team
+**Status:** Draft — updated with confirmed WhatsApp submission flow and bilingual (English/Bengali) requirement
+
+---
+
+## 1. Overview
+
+### 1.1 Purpose
+Khan Institute requires a 4-page informational and lead-generation website to establish an online presence, showcase available courses, display institute photos, and allow prospective students to submit course applications/inquiries directly through the site.
+
+### 1.2 Background
+The client (an educational/vocational training institute offering courses like Computer, Abacus, Tailoring, Beautician, Spoken English, etc.) has provided a hand-drawn wireframe specifying site structure, navigation, and required content sections.
+
+### 1.3 Goals
+- Establish a professional online presence for Khan Institute
+- Enable prospective students to browse courses and apply online
+- Showcase institute photos/facilities via a gallery
+- Provide easy access to contact information and office location
+- Capture lead data (name, father's name, course, mobile) for admissions follow-up
+
+### 1.4 Success Metrics
+- Number of application form submissions per month
+- Website visits / unique users
+- Bounce rate on Courses page
+- Contact page engagement (clicks on phone numbers)
+- Mobile vs desktop traffic split (site must work well on both)
+
+---
+
+## 2. Target Users / Personas
+
+| Persona | Description | Needs |
+|---|---|---|
+| Prospective Student | Local resident (South 24 Parganas) looking for skill/vocational courses | Browse courses, see photos, apply easily via mobile |
+| Parent/Guardian | Enquiring on behalf of student, may fill "Father's Name" field | Trust signals (photos, address, contact), simple form |
+| Institute Staff (Admin) | Development Manager / Managing Director | Receive applications, manage inquiries, update content |
+
+---
+
+## 3. Site Architecture
+
+```
+Home
+ ├── Gallery
+ ├── Courses
+ │     └── Apply (Application Form)
+ └── Contact Us
+```
+
+Global navigation bar (persistent on all pages): **Home | Gallery | Courses | Contact**, plus a **language toggle (EN | বাং)** in the header on every page.
+
+---
+
+## 4. Page-by-Page Functional Requirements
+
+### 4.1 Page 1 — Home
+| Element | Requirement |
+|---|---|
+| Header/Nav | Logo/Institute name "KHAN INSTITUTE" + nav links (Home, Gallery, Courses, Contact) |
+| Hero Section | Welcome heading: "Welcome to Khan Institute" |
+| Hero Image | Institute photo / banner image placeholder |
+| CTA (recommended addition) | "View Courses" / "Apply Now" button linking to Courses page |
+| Footer | Address + phone numbers (repeated across all pages) |
+
+**Acceptance Criteria:**
+- Page loads with welcome message and hero image visible above the fold
+- Nav bar is sticky/accessible on scroll
+- Responsive on mobile (single column stack)
+
+---
+
+### 4.2 Page 2 — Gallery
+| Element | Requirement |
+|---|---|
+| Layout | Grid/masonry layout of images |
+| Content | Photos of institute, classrooms, students, events, certificates |
+| Interaction | Click to enlarge (lightbox modal) — recommended enhancement |
+| Admin capability | Ability for institute staff to add/remove images (via simple CMS or manual deployment, per budget) |
+
+**Acceptance Criteria:**
+- Minimum viable version: static image grid, responsive (2–3 columns desktop, 1 column mobile)
+- Images optimized/compressed for fast loading
+
+---
+
+### 4.3 Page 3 — Courses
+| Element | Requirement |
+|---|---|
+| Course List | Display all offered courses as cards or list: Computer, Abacus, Tailoring, Beautician, Spoken English, Mehendi Art, Drawing, Cake Making, Karate, Competitive Exam Coaching, and others |
+| Course Detail (recommended) | Each course optionally expandable with description, duration, fee (client to provide) |
+| Apply Button | Prominent "Apply" button/section on the page |
+
+**Application Form Fields (as specified by client):**
+| Field | Type | Required | Notes |
+|---|---|---|---|
+| Student's Name | Text | Yes | |
+| Father's Name | Text | Yes | |
+| Apply Course | Dropdown/Select | Yes | Populated from course list |
+| Mobile Number | Tel/Number | Yes | 10-digit validation (Indian mobile format) |
+
+**Recommended additions for a functional form (beyond wireframe):**
+- Submit button with success/confirmation message
+- Basic client-side validation (required fields, mobile number format)
+- Form data sent via **WhatsApp** (see Section 6.1 for mechanism)
+- Anti-spam protection (honeypot field to reduce bot submissions)
+
+**Acceptance Criteria:**
+- On submit, form data opens a pre-filled WhatsApp message to the institute's number for the student/parent to send
+- User sees a confirmation message / redirect notice before being taken to WhatsApp
+- Form is fully usable on mobile devices (large tap targets, appropriate keyboard types)
+
+---
+
+### 4.4 Page 4 — Contact Us
+| Element | Requirement |
+|---|---|
+| Office Address | "Khan Institute, Dholahat, South 24 Parganas – 743399" |
+| Contact Persons | Development Manager: Sakir Hossain Khan — 7501288478 <br> Managing Director: Sharif Hossain Khan — 8926789705 |
+| Click-to-call | Phone numbers should be tappable links (`tel:` links) on mobile |
+| Map (recommended) | Embedded Google Map showing office location |
+| Contact Form (optional/recommended) | Simple name/email/message form as alternative to phone |
+
+**Acceptance Criteria:**
+- Address and phone numbers clearly visible and correctly formatted
+- Phone numbers are clickable on mobile devices
+
+---
+
+## 5. Non-Functional Requirements
+
+| Category | Requirement |
+|---|---|
+| Responsiveness | Fully responsive across mobile, tablet, desktop (mobile-first, given likely audience) |
+| Performance | Page load under 3 seconds on 4G; optimized images |
+| Browser Support | Latest versions of Chrome, Safari, Firefox, Edge; Android/iOS mobile browsers |
+| Language | **Confirmed: Bilingual site — English and Bengali (বাংলা)**, with a toggle switch in the header. All page text (nav, headings, course names, form labels, footer) available in both languages. Implementation: JS-driven text swap using a simple key-value translation object per page (no page reload needed), or duplicate pages per language (`/en/`, `/bn/`) if simpler for SEO — to be decided at build time. |
+| SEO | Basic on-page SEO: page titles, meta descriptions, alt text for images, local SEO (Google Business listing recommended) |
+| Accessibility | Reasonable contrast ratios, alt text on images, readable font sizes |
+| Security | Form data transmitted over HTTPS; basic spam/bot protection on application form |
+| Hosting | Lightweight hosting sufficient (static site + form backend, or basic shared hosting with DB) |
+
+---
+
+## 6. Data & Backend Requirements
+
+### 6.1 Application Submissions — via WhatsApp (No API)
+- **Mechanism:** Uses WhatsApp's free **"click-to-chat" link** (`https://wa.me/<number>?text=<prefilled-message>`) — **not** the paid WhatsApp Business API. No backend server, database, or third-party account required.
+- **Flow:**
+  1. Student fills the form (Student's Name, Father's Name, Course, Mobile Number)
+  2. JavaScript validates the fields and builds a formatted text message from the entered data
+  3. On clicking "Apply" / "Submit," JavaScript opens WhatsApp (app on mobile, WhatsApp Web on desktop) with the institute's number and the message **pre-filled**
+  4. Student taps **Send** inside WhatsApp to actually deliver the inquiry — this final tap is required by WhatsApp's own click-to-chat design and cannot be automated
+- **Which number receives it:** To be confirmed by client — e.g., Development Manager (7501288478) or Managing Director (8926789705), or a dedicated admissions WhatsApp number
+- **Limitations to flag to client:**
+  - Requires the student's device to have WhatsApp installed (or WhatsApp Web on desktop)
+  - The message is only sent once the student manually taps Send inside WhatsApp — Claude/the website cannot force-send it
+  - No stored database of leads on the website itself; all records live in the institute's WhatsApp chat history
+  - If a searchable/exportable lead list is wanted later, an optional low-cost addition (e.g., logging a copy to a simple Google Sheet in parallel) can be discussed — out of scope for v1 unless requested
+
+### 6.2 Content Management
+- Confirmed: course list, gallery images, and page content will be **static/hardcoded** in the HTML files. The developer updates content (new courses, new photos) when the client requests changes — no admin panel or CMS in v1.
+
+---
+
+## 7. Technology Stack (Finalized)
+
+**Confirmed approach: Plain HTML, CSS, and JavaScript** (no framework, no CMS).
+
+| Layer | Technology | Notes |
+|---|---|---|
+| Structure | HTML5 | 4 static pages: `index.html`, `gallery.html`, `courses.html`, `contact.html` |
+| Styling | CSS3 (single shared `style.css`, or per-page if needed) | Mobile-first, responsive via Flexbox/Grid + media queries |
+| Interactivity | Vanilla JavaScript (`script.js`) | Nav toggle (mobile menu), gallery lightbox, form validation, WhatsApp message builder, **EN/Bengali language toggle** |
+| Application Form Handling | Client-side JS validation + **WhatsApp click-to-chat link** (`wa.me`) — no backend, no database, no paid API | JS builds the message string from form fields and opens WhatsApp with it pre-filled; student taps Send to deliver |
+| Hosting | Static hosting (e.g., shared hosting via cPanel, Netlify, GitHub Pages, or Vercel) | Since site is fully static HTML/CSS/JS, hosting cost and complexity stay minimal |
+| Content Updates | Manual — developer edits HTML directly for course/gallery changes (no CMS) | Confirmed given no framework/CMS; revisit if client later wants self-editing |
+
+**File Structure (proposed):**
+```
+/khan-institute-site
+ ├── index.html
+ ├── gallery.html
+ ├── courses.html
+ ├── contact.html
+ ├── /css
+ │    └── style.css
+ ├── /js
+ │    └── script.js
+ └── /assets
+      └── /images
+```
+
+---
+
+## 8. Clarifications Needed From Client (Open Questions)
+
+1. Which **WhatsApp number** should receive applications — Development Manager (7501288478), Managing Director (8926789705), or a separate admissions number?
+2. Are **course fees and durations** to be displayed on the Courses page?
+3. Does the client have an existing **logo** and **brand colors**, or should these be designed?
+4. Is a **domain name** and **hosting** already secured, or does this need to be arranged?
+5. Should the **Contact page** include a map and/or a contact form in addition to listed phone numbers?
+6. Any **social media links** (Facebook/Instagram/WhatsApp) to include in the footer?
+7. For the Bengali translation — should Claude/developer draft the Bengali text, or will the client provide/review final wording (recommended, to ensure natural phrasing)?
+
+---
+
+## 9. Out of Scope (for v1, unless client specifies)
+- Online payment/fee collection
+- Student login portal / LMS features
+- Languages beyond English and Bengali
+- Advanced admin analytics dashboard
+- Stored/searchable database of applications (WhatsApp chat history is the record of leads — see 6.1)
+
+---
+
+## 10. Proposed Timeline (Indicative)
+
+| Phase | Task | Duration |
+|---|---|---|
+| 1 | Requirements sign-off, content collection (photos, final course list, logo) | 3–5 days |
+| 2 | UI/UX design (wireframe → visual design) | 3–5 days |
+| 3 | Development (all 4 pages + form functionality) | 7–10 days |
+| 4 | Testing (cross-device, form submission, links) | 2–3 days |
+| 5 | Deployment & handover | 1–2 days |
+
+*(Total: ~2.5–3.5 weeks depending on client feedback turnaround)*
+
+---
+
+## 11. Deliverables
+- Fully responsive 4-page bilingual website (Home, Gallery, Courses, Contact) — English + Bengali toggle
+- Application form that opens a pre-filled WhatsApp message to the institute's chosen number (no backend/API)
+- Deployed and accessible via live domain
+- Basic documentation/handover notes for future edits

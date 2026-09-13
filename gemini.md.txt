@@ -1,0 +1,80 @@
+# Website Build Prompt — Khan Institute
+*(Copy everything below into Claude / your AI coding tool to generate the site)*
+
+---
+
+Build a professional, modern, responsive **4-page website** for "Khan Institute," a vocational/skills training institute in Dholahat, South 24 Parganas, India. Use **plain HTML5, CSS3, and vanilla JavaScript only** — no frameworks, no build tools, no CMS. The site must have excellent, professional UI/UX: clean layout, strong visual hierarchy, generous whitespace, smooth micro-interactions, and a trustworthy, modern educational-institute feel (not generic template-looking).
+
+## 1. Design Direction
+
+- **Style:** Clean, modern, professional, welcoming — think a well-designed local education/training center site, not corporate-cold and not cluttered.
+- **Color palette:** Choose a cohesive palette built around 1 primary brand color (something warm/trustworthy — e.g., deep blue, teal, or maroon works well for an Indian educational institute) + 1 accent color + neutral grays. Avoid pure black/white — use soft off-white backgrounds and dark charcoal text.
+- **Typography:** Pair a clean sans-serif for body text with a slightly bolder sans-serif or friendly display font for headings. Must support both **Latin and Bengali script** clearly (e.g., pair a font like "Poppins" or "Inter" for English with "Noto Sans Bengali" or "Hind Siliguri" for Bengali, loaded via Google Fonts).
+- **Visual details:** Rounded corners on cards/buttons, subtle shadows for depth, consistent spacing scale (8px grid), smooth hover/transition states (200–300ms ease), icons where useful (use a free icon set like Lucide or Feather via inline SVG — no paid icon fonts).
+- **Imagery:** Use clearly labeled placeholder image blocks (with descriptive alt text and a placeholder background) for: hero banner, gallery photos, course icons — client will replace with real photos later.
+- **Tone:** Warm, encouraging, community-focused — this institute serves local students learning practical skills.
+
+## 2. Technical Requirements
+
+- Pure **HTML/CSS/JS**, mobile-first responsive design (must look great on phones — most visitors will be on mobile)
+- Sticky/fixed header navigation with smooth scroll or clear page links
+- Semantic HTML5 (`<header>`, `<nav>`, `<main>`, `<section>`, `<footer>`, proper heading hierarchy)
+- Accessible: sufficient color contrast, alt text on all images, visible focus states, readable font sizes (min 16px body text)
+- Fast-loading: no unnecessary dependencies; only load Google Fonts + optional small icon SVGs
+- Cross-browser: modern Chrome, Safari, Firefox, Edge, and mobile browsers
+- Clean, commented, well-organized code across separate files
+
+**File structure:**
+```
+/khan-institute-site
+ ├── index.html          (Home)
+ ├── gallery.html
+ ├── courses.html
+ ├── contact.html
+ ├── /css/style.css
+ ├── /js/script.js
+ └── /assets/images/     (placeholder folders)
+```
+
+## 3. Bilingual Requirement — English + Bengali
+
+- Add a **language toggle** (EN | বাং) in the header, visible and easy to tap on every page
+- Clicking it switches ALL visible text on the current page instantly (no reload) between English and Bengali
+- Implement via a JavaScript translation object (key → {en, bn} pairs) applied to elements via `data-i18n` attributes, plus a small script that swaps `textContent` based on the selected language, remembers the choice (in-memory for this session is fine)
+- Include reasonable Bengali translations for all UI text, nav labels, headings, course names, form labels, and footer content
+- Bengali font must render correctly and legibly (use "Noto Sans Bengali" or "Hind Siliguri" from Google Fonts)
+
+## 4. Page-by-Page Content & Layout
+
+### Page 1 — Home (`index.html`)
+- Header: "KHAN INSTITUTE" logo/wordmark + nav (Home, Gallery, Courses, Contact) + language toggle
+- Hero section: large welcome heading ("Welcome to Khan Institute" / Bengali equivalent), short supporting tagline about skill-based education for the local community, a hero image placeholder, and a clear "Apply Now" / "View Courses" call-to-action button
+- A brief "Why Choose Us" or "About" section (2–3 short trust-building points — e.g., experienced trainers, hands-on training, flexible courses) — you may write reasonable placeholder copy
+- Footer on all pages: address, phone numbers, quick nav links, social icons (placeholders)
+
+### Page 2 — Gallery (`gallery.html`)
+- Page heading + short intro line
+- Responsive image grid (3 columns desktop, 2 tablet, 1 mobile) using placeholder images with varied realistic institute-themed captions (classroom, computer lab, students, certificate ceremony, etc.)
+- Click-to-enlarge lightbox (pure JS/CSS modal, no library)
+
+### Page 3 — Courses (`courses.html`)
+- Page heading + intro
+- Course cards/grid for: Computer, Abacus, Tailoring, Beautician, Spoken English, Mehendi Art, Drawing, Cake Making, Karate, Competitive Exam Coaching, and an "Others" card — each with a small icon, course name, and 1-line description (write reasonable placeholder descriptions)
+- **Application form** (prominent, well-designed, in its own clearly separated section below/beside the course list):
+  - Fields: Student's Name (text, required), Father's Name (text, required), Apply for Course (dropdown populated from the course list, required), Mobile Number (tel, required, 10-digit validation)
+  - Client-side JS validation with clear inline error messages
+  - On submit: build a formatted message string from the field values, encode it, and open `https://wa.me/<INSTITUTE_WHATSAPP_NUMBER>?text=<encoded-message>` in a new tab so the pre-filled message is ready for the student to send in WhatsApp
+  - Use `<INSTITUTE_WHATSAPP_NUMBER>` as a placeholder variable at the top of `script.js` so it's easy to update
+  - Show a friendly confirmation note near the button (e.g., "You'll be redirected to WhatsApp to send your application")
+
+### Page 4 — Contact Us (`contact.html`)
+- Office address: "Khan Institute, Dholahat, South 24 Parganas – 743399"
+- Contact cards for: Development Manager — Sakir Hossain Khan — 7501288478, and Managing Director — Sharif Hossain Khan — 8926789705
+- Phone numbers as tappable `tel:` links
+- A WhatsApp quick-contact button (`wa.me` link, same placeholder number variable) as an easy alternative to calling
+- An embedded Google Map iframe placeholder for the office location
+- Simple, clean layout — not a form-heavy page, just clear contact info presented attractively
+
+## 5. Deliverable
+
+Generate the complete, working code for all files listed in the file structure above — fully functional, styled, responsive, and ready to open in a browser. Make it look genuinely polished and professional, as if designed by an experienced UI/UX designer — not a generic bootstrap-template look.
