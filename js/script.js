@@ -9,7 +9,7 @@
    CONFIGURABLE CONSTANTS
    ========================================================================== */
 const INSTITUTE_WHATSAPP_NUMBER = '917501288478'; // Primary admissions WhatsApp (Development Manager)
-const DIRECTOR_WHATSAPP_NUMBER  = '918926789705'; // Managing Director WhatsApp
+const DIRECTOR_WHATSAPP_NUMBER = '918926789705'; // Managing Director WhatsApp
 
 /* ==========================================================================
    BILINGUAL TRANSLATION DICTIONARY (EN & BN)
@@ -18,7 +18,7 @@ const translations = {
   en: {
     // Top Bar & Meta
     top_notice: "Admissions Open for New Batches 2026 — Dholahat, South 24 Parganas",
-    top_call: "Call Us: +91 7501288478",
+    top_call: "Call Us: +91 8926789705 / 7501288478",
     top_timing: "Mon - Sat: 9:00 AM - 6:00 PM",
 
     // Brand
@@ -82,7 +82,7 @@ const translations = {
     cta_title: "Ready to Upgrade Your Skills & Career?",
     cta_desc: "New batches are enrolling this week. Contact our counselors or submit a quick WhatsApp application today!",
     cta_btn_apply: "Fill Application Form",
-    cta_btn_call: "Call Development Manager",
+    cta_btn_call: "Call Us: 8926789705 / 7501288478",
 
     // Courses Page
     courses_hero_tag: "Comprehensive Programs",
@@ -101,7 +101,7 @@ const translations = {
     c1_title: "Computer Applications",
     c1_category: "IT & Digital Skills",
     c1_desc: "Comprehensive computer training including Basic, DITA, DCA, MS Office, Internet, and Tally ERP for office jobs.",
-    
+
     c2_title: "Abacus & Mental Maths",
     c2_category: "Child Development",
     c2_desc: "Brain development, speed calculation, memory enhancement, and photographic memory for school students.",
@@ -154,7 +154,7 @@ const translations = {
     step_2_desc: "Your application is formatted into an official admission message.",
     step_3_title: "Instant Confirmation",
     step_3_desc: "Our counselors confirm your batch timing, fees, and orientation date.",
-    
+
     label_name: "Student's Full Name",
     placeholder_name: "Enter student's full name",
     err_name: "Please enter a valid student name (min. 3 letters)",
@@ -185,7 +185,15 @@ const translations = {
     filter_labs: "Computer & Classrooms",
     filter_workshops: "Vocational Workshops",
     filter_events: "Ceremonies & Activities",
-    
+
+    // Real Event Gallery Captions
+    g_real1_title: "Teachers' Day & Convocation",
+    g_real1_desc: "Teachers' Day celebration and annual certificate distribution at Dholahat campus.",
+    g_real2_title: "Student Felicitation & Honors",
+    g_real2_desc: "Honoring top-performing students with badges and merit certificates for excellence.",
+    g_real3_title: "Graduation Certificate Ceremony",
+    g_real3_desc: "Proud vocational course graduates receiving official career-ready certificates.",
+
     // Gallery Captions
     g1_title: "High-Tech Computer Lab",
     g1_desc: "Students practicing typing, office software, and digital literacy.",
@@ -208,7 +216,7 @@ const translations = {
     contact_hero_tag: "Get In Touch",
     contact_hero_title: "Contact Khan Institute",
     contact_hero_subtitle: "Have questions about courses, fees, or batch timings? Call us or visit our Dholahat campus.",
-    
+
     card_dm_title: "Development Manager",
     card_dm_name: "Sakir Hossain Khan",
     card_dm_role: "Admissions, Course Inquiries & Student Support",
@@ -228,7 +236,7 @@ const translations = {
     hours_label: "Office Hours",
     hours_val: "Monday – Saturday: 9:00 AM – 6:00 PM (Closed on Sunday)",
     email_label: "Inquiries",
-    email_val: "contact@khaninstitute.in",
+    email_val: "khaninstitute1@gmail.com",
     map_notice: "Easily accessible from Dholahat market & main road.",
 
     // Footer
@@ -242,7 +250,7 @@ const translations = {
   bn: {
     // Top Bar & Meta
     top_notice: "নতুন ব্যাচের ভর্তি চলছে ২০২৬ — ঢোলাহাট, দক্ষিণ ২৪ পরগনা",
-    top_call: "যোগাযোগ: +91 7501288478",
+    top_call: "যোগাযোগ: +91 8926789705 / 7501288478",
     top_timing: "সোম - শনি: সকাল ৯:০০ - সন্ধ্যা ৬:০০",
 
     // Brand
@@ -306,7 +314,7 @@ const translations = {
     cta_title: "নিজের দক্ষতাকে আরও বাড়িয়ে তুলতে প্রস্তুত?",
     cta_desc: "এই সপ্তাহে নতুন ব্যাচের ভর্তি চলছে। সরাসরি কথা বলুন আমাদের কাউন্সিলরদের সাথে অথবা এখনই আবেদন করুন!",
     cta_btn_apply: "ভর্তি ফর্ম পূরণ করুন",
-    cta_btn_call: "ম্যানেজারকে ফোন করুন",
+    cta_btn_call: "কল করুন: 8926789705 / 7501288478",
 
     // Courses Page
     courses_hero_tag: "প্রশিক্ষণ কর্মসূচি",
@@ -325,7 +333,7 @@ const translations = {
     c1_title: "কম্পিউটার অ্যাপ্লিকেশন",
     c1_category: "আইটি ও ডিজিটাল দক্ষতা",
     c1_desc: "বেসিক, ডিটা (DITA), ডিসিএ, মাইক্রোসফট অফিস, ইন্টারনেট এবং ট্যালি ইআরপি (Tally ERP) সহ অফিস কোর্সের সম্পূর্ণ প্রশিক্ষণ।",
-    
+
     c2_title: "অ্যাবাকাস ও মানসিক গণিত",
     c2_category: "মেধা ও মস্তিষ্ক বিকাশ",
     c2_desc: "ছোটদের মানসিক একাগ্রতা, স্মৃতিশক্তি ও দ্রুত নির্ভুল গণনার জন্য আন্তর্জাতিক মানের অ্যাবাকাস প্রশিক্ষণ।",
@@ -378,7 +386,7 @@ const translations = {
     step_2_desc: "আপনার তথ্য দিয়ে একটি সুসংগঠিত আবেদন বার্তা তৈরি হবে।",
     step_3_title: "তাৎক্ষণিক নিশ্চিতকরণ",
     step_3_desc: "আমাদের কাউন্সিলর ব্যাচের সময়, ফি ও তারিখ জানিয়ে আপনাকে নিশ্চিত করবেন।",
-    
+
     label_name: "শিক্ষার্থীর পুরো নাম",
     placeholder_name: "শিক্ষার্থীর নাম লিখুন",
     err_name: "অনুগ্রহ করে সঠিক নাম লিখুন (কমপক্ষে ৩ অক্ষর)",
@@ -409,7 +417,15 @@ const translations = {
     filter_labs: "কম্পিউটার ও ক্লাসরুম",
     filter_workshops: "বৃত্তিমূলক কর্মশালা",
     filter_events: "অনুষ্ঠান ও সমাবর্তন",
-    
+
+    // Real Event Gallery Captions
+    g_real1_title: "শিক্ষক দিবস ও বার্ষিক সমাবর্তন",
+    g_real1_desc: "ঢোলাহাট ক্যাম্পাসে শিক্ষক দিবস ও বার্ষিক শংসাপত্র বিতরণ উৎসব উদযাপন।",
+    g_real2_title: "কৃতি শিক্ষার্থীদের সংবর্ধনা ও মানপত্র",
+    g_real2_desc: "উৎকর্ষের জন্য কৃতী ছাত্র-ছাত্রীদের ব্যাজ ও মেধা শংসাপত্র প্রদান।",
+    g_real3_title: "বৃত্তিমূলক কোর্সের সনদপত্র বিতরণ উৎসব",
+    g_real3_desc: "সফলভাবে কোর্স সম্পন্নকারী শিক্ষার্থীদের হাতে সরকারি মানসম্পন্ন সনদপত্র তুলে দেওয়া হচ্ছে।",
+
     // Gallery Captions
     g1_title: "আধুনিক কম্পিউটার ল্যাব",
     g1_desc: "শিক্ষার্থীরা টাইপিং ও অফিস সফটওয়্যার প্রশিক্ষণ গ্রহণ করছে।",
@@ -432,7 +448,7 @@ const translations = {
     contact_hero_tag: "যোগাযোগ করুন",
     contact_hero_title: "খান ইনস্টিটিউটে স্বাগতম",
     contact_hero_subtitle: "কোর্স ফি, ব্যাচের সময় বা ভর্তির বিষয়ে যেকোনো প্রশ্নে সরাসরি কথা বলুন অথবা আমাদের সেন্টারে আসুন।",
-    
+
     card_dm_title: "ডেভেলপমেন্ট ম্যানেজার",
     card_dm_name: "শাকির হোসেন খান",
     card_dm_role: "ভর্তি, কোর্স সংক্রান্ত তথ্য ও ছাত্র সহায়তা",
@@ -452,7 +468,7 @@ const translations = {
     hours_label: "অফিস সময়",
     hours_val: "সোমবার – শনিবার: সকাল ৯:০০ – সন্ধ্যা ৬:০০ (রবিবার বন্ধ)",
     email_label: "ইমেল অনুসন্ধান",
-    email_val: "contact@khaninstitute.in",
+    email_val: "khaninstitute1@gmail.com",
     map_notice: "ঢোলাহাট বাজার ও প্রধান রাস্তা থেকে সহজে যোগাযোগযোগ্য।",
 
     // Footer
@@ -588,7 +604,7 @@ function initMobileDrawer() {
   const closeBtn = document.querySelector('.mobile-close-btn');
   const backdrop = document.querySelector('.mobile-nav-backdrop');
   const drawer = document.querySelector('.mobile-drawer');
-  const navLinks = document.querySelectorAll('.mobile-nav-link');
+  const navLinks = document.querySelectorAll('.mobile-nav-link, .mobile-drawer-footer .btn');
 
   if (!openBtn || !drawer) return;
 
@@ -610,6 +626,13 @@ function initMobileDrawer() {
 
   navLinks.forEach(link => {
     link.addEventListener('click', closeDrawer);
+  });
+
+  // Close with Escape key
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && drawer.classList.contains('active')) {
+      closeDrawer();
+    }
   });
 }
 
@@ -688,26 +711,27 @@ function initApplicationForm() {
 
     const notes = notesInput ? notesInput.value.trim() : '';
 
-    // Construct formatted WhatsApp message
-    const waMessage = 
-`🎓 *KHAN INSTITUTE — ADMISSION APPLICATION*
-━━━━━━━━━━━━━━━━━━━━━━
-👤 *Student's Name:* ${sName}
-👨‍👧 *Father's Name:* ${fName}
-📚 *Applied Course:* ${course}
-📞 *Mobile Number:* ${phone}
-${notes ? `💬 *Additional Note:* ${notes}\n` : ''}━━━━━━━━━━━━━━━━━━━━━━
-📍 _Submitted via Khan Institute official website (khaninstitute.in)_
-📅 _Dholahat, South 24 Parganas_`;
+    // Bulletproof formatted WhatsApp message with guaranteed Unicode escapes
+    const waMessage =
+      `\u{1F393} *KHAN INSTITUTE — ADMISSION APPLICATION*
+----------------------------------------
+\u{1F464} *Student Name:* ${sName}
+\u{1F468} *Father's Name:* ${fName}
+\u{1F4DA} *Applied Course:* ${course}
+\u{1F4DE} *Mobile Number:* ${phone}
+${notes ? `\u{1F4DD} *Additional Note:* ${notes}\n` : ''}----------------------------------------
+\u{1F4CD} _Dholahat, South 24 Parganas_
+\u{1F310} _Sent via khaninstitute.in_`;
 
-    const waUrl = `https://wa.me/${INSTITUTE_WHATSAPP_NUMBER}?text=${encodeURIComponent(waMessage)}`;
+    // Direct WhatsApp API URL with full UTF-8 URL encoding
+    const waUrl = `https://api.whatsapp.com/send?phone=${INSTITUTE_WHATSAPP_NUMBER}&text=${encodeURIComponent(waMessage)}`;
 
     // Open WhatsApp in a new window/tab
     window.open(waUrl, '_blank');
 
     // Friendly on-screen feedback
-    alert(currentLanguage === 'bn' 
-      ? 'ধন্যবাদ! আপনার আবেদনের তথ্য দিয়ে হোয়াটসঅ্যাপ খোলা হচ্ছে। মেসেজটি সেন্ড করে সরাসরি ইনস্টিটিউটের সাথে যুক্ত হোন।' 
+    alert(currentLanguage === 'bn'
+      ? 'ধন্যবাদ! আপনার আবেদনের তথ্য দিয়ে হোয়াটসঅ্যাপ খোলা হচ্ছে। মেসেজটি সেন্ড করে সরাসরি ইনস্টিটিউটের সাথে যুক্ত হোন।'
       : 'Thank you! WhatsApp is opening with your formatted application. Please hit Send to submit directly to Khan Institute.');
   });
 
@@ -742,8 +766,8 @@ function handleUrlCoursePreSelect() {
   if (courseParam && courseSelect) {
     // Attempt match
     for (let opt of courseSelect.options) {
-      if (opt.value.toLowerCase().includes(courseParam.toLowerCase()) || 
-          courseParam.toLowerCase().includes(opt.value.toLowerCase())) {
+      if (opt.value.toLowerCase().includes(courseParam.toLowerCase()) ||
+        courseParam.toLowerCase().includes(opt.value.toLowerCase())) {
         courseSelect.value = opt.value;
         break;
       }
@@ -858,6 +882,40 @@ function initGalleryLightbox() {
   modal.addEventListener('click', (e) => {
     if (e.target === modal) closeModal();
   });
+
+  // Mobile Touch Swipe Gestures
+  let touchStartX = 0;
+  let touchStartY = 0;
+  let touchEndX = 0;
+  let touchEndY = 0;
+
+  modal.addEventListener('touchstart', (e) => {
+    touchStartX = e.changedTouches[0].screenX;
+    touchStartY = e.changedTouches[0].screenY;
+  }, { passive: true });
+
+  modal.addEventListener('touchend', (e) => {
+    touchEndX = e.changedTouches[0].screenX;
+    touchEndY = e.changedTouches[0].screenY;
+    handleSwipe();
+  }, { passive: true });
+
+  function handleSwipe() {
+    const diffX = touchEndX - touchStartX;
+    const diffY = touchEndY - touchStartY;
+
+    // Horizontal swipe (left = next, right = prev)
+    if (Math.abs(diffX) > 40 && Math.abs(diffX) > Math.abs(diffY)) {
+      if (diffX < 0) {
+        showNext();
+      } else {
+        showPrev();
+      }
+    } else if (diffY > 75 && Math.abs(diffY) > Math.abs(diffX)) {
+      // Swipe down to dismiss
+      closeModal();
+    }
+  }
 
   // Keyboard navigation
   document.addEventListener('keydown', (e) => {
