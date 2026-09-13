@@ -611,12 +611,14 @@ function initMobileDrawer() {
   function openDrawer() {
     drawer.classList.add('active');
     if (backdrop) backdrop.classList.add('active');
+    document.body.classList.add('drawer-open');
     document.body.style.overflow = 'hidden';
   }
 
   function closeDrawer() {
     drawer.classList.remove('active');
     if (backdrop) backdrop.classList.remove('active');
+    document.body.classList.remove('drawer-open');
     document.body.style.overflow = '';
   }
 
